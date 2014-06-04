@@ -1,0 +1,14 @@
+#ChiHackNight
+
+5/26/2014
+6/3/2014
+Englewood.codes~ 
+Github pages, 10 week course
+N Central College made them an ide.englewood.codes, a shell to iface w gh
+commit, then push to git-pages (not master)
+used laravel php framework
+
+Derek's text editor recommendations - need a syntax highlighter, eg:
+Windows: N++
+
+
