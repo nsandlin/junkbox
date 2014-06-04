@@ -5,7 +5,7 @@
 Englewood.codes~ 
 Github pages, 10 week course
 N Central College made them an ide.englewood.codes, a shell to iface w gh
-commit, then push to git-pages (not master)
+commit (WITH MSG!), then push to git-pages (not master)
 used laravel php framework
 
 Derek's text editor recommendations - need a syntax highlighter, eg:
