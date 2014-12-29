@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+function loadXMLDoc() {
+  var xmlhttp;
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari 
+    xmlhttp=new XMLHttpRequest();
+  }
+  else {
+    // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+  }
+  //xmlhttp.open("GET","myjson.txt",true);
+  xmlhttp.open("GET","https://data.healthcare.gov/resource/9ekw-w85c.json?County=Adams&plan_id_standard_component=20129IL0290001",true);
+  xmlhttp.send();
+}
+</script>
+
+<p>Will something appear below?</p>
+
+<button type="button" onclick="loadXMLDoc()">Request data</button>
+<div id="myDiv"></div>
+
+</body></html>
