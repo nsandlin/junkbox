@@ -20,22 +20,29 @@ function loadXMLDoc() {  if (window.XMLHttpRequest) {
 
     }
   }
-  xmlhttp.open("GET","https://data.healthcare.gov/resource/9ekw-w85c.json?County=Adams&plan_id_standard_component=20129IL0290001",true);
+  //xmlhttp.open("GET","https://data.healthcare.gov/resource/9ekw-w85c.json?County=Adams&plan_id_standard_component=20129IL0290001",true);
+  xmlhttp.open("GET","https://data.healthcare.gov/resource/9ekw-w85c.json?County=Adams",true);
   xmlhttp.send();
 }
 
 function myFunction(arr) {
     var out = "";
     var i;
-    for(i = 0; i < arr.length; i++) {
-        out += 'plan: ' + arr[i].plan_id_standard_component + '<br>level: ' + 
-        arr[i].metal_level + '<br>';
+    for(i = 1; i < arr.length; i++) {
+        out += i + '. Insurer: ' + arr[i].issuer_name + 
+        '<br>Plan ID: ' + arr[i].plan_id_standard_component + 
+        '<br>Metal level: ' + arr[i].metal_level + 
+        '<br>Deductible: ' + arr[i].medical_deductible_family_standard + 
+        '<br>Premium (Individual): $' + arr[i].premium_adult_individual_age_50 +
+        '<br>Premium (with 2 children): $' + arr[i].individual_2_children_age_21 +
+        '<br>Phone: ' + arr[i].customer_service_phone_number_local + 
+        '<br>Details: ' + arr[i].plan_brochure_url + '<br><br>';
     }
     document.getElementById("myDiv").innerHTML = out;
 }
 </script>
 
-<p>Will something appear below?</p>
+<p>ACA qualified health plans in Adams County, IL</p>
 
 <button type="button" onclick="loadXMLDoc()">Request data</button>
 <div id="myDiv"></div>
