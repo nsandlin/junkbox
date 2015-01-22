@@ -26,8 +26,9 @@ function loadXMLDoc() {  if (window.XMLHttpRequest) {
 function myFunction(arr) {
     var out = "";
     var i;
-    for(i = 1; i < arr.length; i++) {
-        out += i + '. Insurer: ' + arr[i].issuer_name + 
+    for(i = 0; i < arr.length; i++) {
+        var num = i+1;
+        out += num + '. Insurer: ' + arr[i].issuer_name + 
         '<br>Plan ID: ' + arr[i].plan_id_standard_component + 
         '<br>Metal level: ' + arr[i].metal_level + 
         '<br>Deductible: ' + arr[i].medical_deductible_family_standard + 
